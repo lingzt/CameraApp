@@ -41,9 +41,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    self.imageView.image = image;
+    self.imageView.image = [self reduceImageSize:image];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -54,9 +56,17 @@
 
 
 
-
-
-
-
+-(UIImage *)reduceImageSize:(UIImage *)image {
+        NSLog(@"ORIGINAL IMAGE: width-%f, height-%f", image.size.width, image.size.height);
+    //creating a frame
+    CGSize newSize = CGSizeMake(image.size.width/6, image.size.height/6);
+    UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+    //Where to the frame the new painting is going to be placed
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    
+    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
+        NSLog(@"SMALL IMAGE: width-%f, height-%f", smallImage.size.width, smallImage.size.height);
+    return smallImage;
+}
 
 @end
