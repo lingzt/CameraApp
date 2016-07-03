@@ -19,19 +19,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fel-AU-VDZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fel-AU-VDZ">
                                 <rect key="frame" x="20" y="20" width="280" height="280"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fel-AU-VDZ" secondAttribute="height" multiplier="1:1" id="QqA-Em-xV7"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqp-7n-2oA">
+                                <rect key="frame" x="43" y="389" width="85" height="30"/>
+                                <state key="normal" title="Take Picture"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QrH-Bq-aGG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0L7-sa-FcY">
+                                <rect key="frame" x="142" y="389" width="139" height="30"/>
+                                <state key="normal" title="Choose from gallery"/>
+                                <connections>
+                                    <action selector="chooseFromGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ew-L5-4xn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="fel-AU-VDZ" secondAttribute="leading" id="AGa-rf-xKI"/>
+                            <constraint firstItem="0L7-sa-FcY" firstAttribute="top" secondItem="fel-AU-VDZ" secondAttribute="bottom" constant="89" id="I3v-EY-EBr"/>
                             <constraint firstItem="fel-AU-VDZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KUT-tG-gYb"/>
                             <constraint firstItem="fel-AU-VDZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="coJ-Xt-0cc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fel-AU-VDZ" secondAttribute="trailing" id="guZ-wO-P7N"/>
+                            <constraint firstItem="0L7-sa-FcY" firstAttribute="leading" secondItem="Vqp-7n-2oA" secondAttribute="trailing" constant="14" id="o7u-cn-UEF"/>
+                            <constraint firstItem="Vqp-7n-2oA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="23" id="vsk-Dm-MqI"/>
+                            <constraint firstItem="Vqp-7n-2oA" firstAttribute="top" secondItem="fel-AU-VDZ" secondAttribute="bottom" constant="89" id="wsF-S3-NzJ"/>
                         </constraints>
                     </view>
                     <connections>
